@@ -13,13 +13,22 @@
       color: #333;
     }
 
-    /* Logo Header */
+   /* Header Banner */
     header {
-      background: #fff;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+      background-size: 300% 300%;
+      animation: rainbow 8s ease infinite;
       text-align: center;
-      padding: 50px 20px 30px;
-      border-bottom: 2px solid #eee;
+      padding: 80px 20px;
+      color: #fff;
     }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
 
     header h1 {
       font-size: 65px;
