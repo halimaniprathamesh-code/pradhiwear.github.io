@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pradhi - Kids Wear</title>
+
+  <!-- Optional: high-contrast modern Bodoni family for logo fallback -->
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* ------------------ Reset ------------------ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
 
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -19,120 +20,141 @@
       line-height: 1.6;
     }
 
-    /* Logo style (similar to H&M) */
-    .logo {
-      font-family: 'Didot', 'Bodoni MT', serif; /* Closest alternative */
-      font-weight: bold;
-      font-style: italic;
-      font-size: 3.5rem;
-      color: #e50010; /* H&M red */
-      letter-spacing: -2px;
-    }
-
+    /* ------------------ Header ------------------ */
     header {
-      background: #000;
+      background: #000;           /* Keep the classy black around the band */
       color: #fff;
       text-align: center;
-      padding: 60px 20px;
+      padding: 48px 16px;
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #ddd;
+    /* Rainbow band behind the logo + tagline */
+    .rainbow-band {
+      display: inline-block;
+      padding: 28px 28px 24px;
+      border-radius: 18px;
+      /* 7 straight stripes of the rainbow */
+      background:
+        linear-gradient(
+          to bottom,
+          #FF0012 0%,   #FF0012 14.2857%,
+          #FF7A00 14.2857%, #FF7A00 28.5714%,
+          #FFD400 28.5714%, #FFD400 42.8571%,
+          #00B32D 42.8571%, #00B32D 57.1428%,
+          #0075FF 57.1428%, #0075FF 71.4285%,
+          #4B00FF 71.4285%, #4B00FF 85.7142%,
+          #8B00FF 85.7142%, #8B00FF 100%
+        );
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
 
+    /* Logo text (H&M-like) */
+    .logo {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif; /* closest free family */
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -2px;
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      line-height: 1;
+      color: #e50010;   /* H&M red */
+      text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+      margin: 0 0 10px;
+    }
+
+    /* Tagline shown on the same rainbow band */
+    .tagline {
+      margin: 0;
+      font-size: clamp(0.95rem, 2.3vw, 1.25rem);
+      color: #fff;      /* high contrast on rainbow */
+      letter-spacing: .2px;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+      white-space: normal;
+    }
+
+    /* ------------------ Nav ------------------ */
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 22px;
       background: #f5f5f5;
-      padding: 15px;
+      padding: 14px;
     }
-
     nav a {
       text-decoration: none;
       color: #000;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color .25s ease;
     }
+    nav a:hover { color: #555; }
 
-    nav a:hover {
-      color: #555;
-    }
-
+    /* ------------------ Collections ------------------ */
     .collections {
       text-align: center;
       padding: 60px 20px;
     }
-
     .collections h2 {
       font-size: 2rem;
       margin-bottom: 40px;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-
     .card {
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       background: #fff;
-      transition: transform 0.3s;
+      transition: transform 0.25s ease;
     }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
+    .card:hover { transform: translateY(-3px) scale(1.02); }
     .card img {
       width: 100%;
       height: 300px;
       object-fit: cover;
     }
-
     .card h3 {
       padding: 15px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
+    /* ------------------ Contact ------------------ */
     .contact {
       background: #f8f8f8;
       padding: 40px 20px;
       text-align: center;
     }
+    .contact h2 { font-size: 1.8rem; margin-bottom: 20px; }
+    .contact a { color: #000; text-decoration: none; font-weight: bold; }
 
-    .contact h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-
-    .contact a {
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
+    /* ------------------ Footer ------------------ */
     footer {
       background: #000;
       color: #fff;
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
+      font-size: .9rem;
+    }
+
+    /* ------------------ Accessibility tweak ------------------ */
+    @media (prefers-reduced-motion: reduce) {
+      .card { transition: none; }
+      nav a { transition: none; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1 class="logo">PRADHI</h1>
-    <p>Making everyday special for little ones.</p>
+    <div class="rainbow-band" role="img" aria-label="Rainbow background behind PRADHI brand">
+      <h1 class="logo">PRADHI</h1>
+      <p class="tagline">Making everyday special for little ones.</p>
+    </div>
   </header>
 
-  <nav>
+  <nav aria-label="Primary">
     <a href="#">Home</a>
     <a href="#collections">Collections</a>
     <a href="#contact">Contact</a>
