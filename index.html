@@ -1,25 +1,125 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <tittle>my brand</tittle>
-    <style>
-      body {
-        font-family:Arial, sans-serif;
-        text-align: center;
-        margin: 50px;
-      }
-      h1 {
-        color: black;
-        font-size: 40px;
-      }
-      p {
-        color: #444;
-      }
-    
-    </style>
-  </head>
-  <body>
-    <h1>Welcome to my Brand</h1>
-  <p>Permium fashion inspried by H&M.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PradhiWear – Premium Fashion</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      border-bottom: 1px solid #eee;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: #f5f5f5;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: black;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #444;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
+      border-top: 1px solid #eee;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>PradhiWear</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Premium Fashion for Everyone</h2>
+    <p>Modern, stylish, and comfortable clothing inspired by H&M.</p>
+    <a href="#" class="btn">Shop Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 PradhiWear. All rights reserved.</p>
+  </footer>
+</body>
 </html>
